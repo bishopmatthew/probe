@@ -58,6 +58,7 @@ class LayoutResourceParser {
                    name == "include" ||
                    name == "ViewStub" ||
                    name == "fragment" ||
+                   name == "Space" ||
                    name == "requestLayout") {
             className = null
         } else if (name.indexOf('.') == -1) {
