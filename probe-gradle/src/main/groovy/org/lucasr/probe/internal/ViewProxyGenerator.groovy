@@ -170,7 +170,8 @@ class ViewProxyGenerator {
     }
 
     private static void generateOnMeasureMethod(JavaWriter javaWriter) {
-        beginOnMeasureMethod(javaWriter, METHOD_ON_MEASURE, PROTECTED)
+        // must be public because android.widget.Switch has a public onMeasure method (despite all others being protected)
+        beginOnMeasureMethod(javaWriter, METHOD_ON_MEASURE, PUBLIC)
         generateInterceptorConditional(javaWriter, METHOD_ON_MEASURE, PARAM_WIDTH_SPEC,
                 PARAM_HEIGHT_SPEC)
         javaWriter.endMethod()
