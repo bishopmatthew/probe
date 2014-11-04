@@ -137,8 +137,10 @@ public class Interceptor {
      * Performs a {@link View#forceLayout()} call on the given {@link View}.
      */
     protected final void invokeForceLayout(View view) {
-        final ViewProxy proxy = (ViewProxy) view;
-        proxy.invokeForceLayout();
+        if(view instanceof ViewProxy) {
+            final ViewProxy proxy = (ViewProxy) view;
+            proxy.invokeForceLayout();
+        }
     }
 
     /**
